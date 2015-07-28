@@ -6,7 +6,7 @@ class ListingFinishedBooksTest < ActionDispatch::IntegrationTest
     Book.create!(title: 'Finished', finished_at: 1.day.ago)
     Book.create!(title: 'Not Finished', finished_at: nil)
   end
-  
+
   test 'lists finished books in JSON' do
     get '/finished_books', {}, {'Accept' => 'application/json'}
 
