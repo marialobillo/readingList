@@ -14,5 +14,8 @@ class CreatingBooksTest < ActionDispatch::IntegrationTest
     assert_equal Mime::JSON, response.content_type
     book = json(response.body)
     assert_equal book_url(book[:id]), response.location
+
+    assert_equal 'Pragmatic Programmer', book[:title]
+    assert_equal 5, book[:rating].to_i
   end
 end
