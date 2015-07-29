@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class CreatingBooksTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test 'creates new books' do
+    post '/books', {}, {}
+
+    assert_equal 201, response.status
+  end
 end
