@@ -18,6 +18,12 @@ class BooksController < ApplicationController
     end
   end
 
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy!
+    render nothing: true, status: 204
+  end
+
   private
 
     def book_params
