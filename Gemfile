@@ -17,6 +17,8 @@ group :development, :test do
   gem 'spring'
 end
 
-group :development do 
+group :development do
   gem 'spring'
 end
+gem 'active_model_serializers', '~> 0.9.3'
+gem 'debugger', group: [:development, :test]

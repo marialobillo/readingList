@@ -12,6 +12,8 @@ class ListingBooksTest < ActionDispatch::IntegrationTest
 
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
+
+    debugger
     assert_equal Book.count, json(response.body).size
   end
 
